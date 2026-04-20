@@ -12,7 +12,7 @@ q = st.text_area("Ask anything")
 if st.button("Send"):
     if q:
         API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1"
-        headers = {"Authorization": "Bearer YOUR_HF_TOKEN"}
+        headers = {"Authorization": "Bearer YOUR_REAL_TOKEN"}
         response = requests.post(API_URL, headers=headers, json={"inputs": q})
         try:
             st.write(response.json()[0]["generated_text"])
